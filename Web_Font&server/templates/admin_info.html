@@ -1,0 +1,37 @@
+{% extends "admin_base.html" %}
+{% block title %}
+    个人信息
+{% endblock %}
+
+{% block body %}
+    <div class="row" style="margin-top: 20px;">
+        <div class="col"></div>
+        <div class="col-10">
+            <br/>
+            <h3 style="text-align: left;">个人信息</h3>
+            <!--将用户信息放到一个form中-->
+            {% if message %}
+                 <br/>
+                <div style="text-align: center; color: dodgerblue">{{message}}</div>
+                <br/>
+            {% endif %}
+            <form method="POST">
+                <br/>
+                <div style="text-align: center; vertical-align: middle">
+                    <label for="exampleInputUser">用户名</label>
+                    <input type="text" name="username" style="text-align: center" placeholder="{{ info.username }}" value="{{ info.username }}" readonly="true"/>
+                </div>
+                <br/>
+                <div style="text-align: center; vertical-align: middle">
+                    <label for="exampleInputUser">密&emsp;码</label>
+                    <input type="text" name="password" style="text-align: center" placeholder="{{ info.password }}" value="{{ info.password }}"/>
+                <div class="form-group">
+                </div>
+                    <button class="btn btn-primary">修改</button>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
+{% endblock %}
